@@ -28,6 +28,9 @@ function styles(theme: Theme) {
     logo: {
       width: 150,
     },
+    currentPage: {
+      backgroundColor: theme.palette.primary.light,
+    },
   });
 }
 
@@ -37,6 +40,24 @@ export interface TopMenuBarProps extends WithStyles<typeof styles> {
 
 const TopMenuBar = (props: TopMenuBarProps): JSX.Element => {
   const { classes, loggedIn } = props;
+  const menuItems = [
+    {
+      name: 'Services',
+      link: '/services',
+    },
+    {
+      name: 'Volunteer',
+      link: '/volunteer',
+    },
+    {
+      name: 'Calendar',
+      link: '/calendar',
+    },
+    {
+      name: 'About',
+      link: '/about',
+    },
+  ];
   return (
     <div className={classes.root}>
       <AppBar position="static" title="Best Community Service">
@@ -49,18 +70,22 @@ const TopMenuBar = (props: TopMenuBarProps): JSX.Element => {
                 alt="Best Community Service Logo"
               />
             </Button>
-            <Button color="inherit" href="/services">
-              Services
-            </Button>
-            <Button color="inherit" href="/volunteer">
-              Volunteer
-            </Button>
-            <Button color="inherit" href="/calendar">
-              Calendar
-            </Button>
-            <Button color="inherit" href="/about">
-              About
-            </Button>
+            {menuItems.map(item => {
+              return (
+                <Button
+                  color="inherit"
+                  href={item.link}
+                  key={item.name}
+                  className={
+                    window.location.pathname === item.link
+                      ? classes.currentPage
+                      : ''
+                  }
+                >
+                  {item.name}
+                </Button>
+              );
+            })}
           </div>
           <Button color="inherit" variant="outlined">
             {loggedIn ? 'Logout' : 'Login'}
