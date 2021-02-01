@@ -4,13 +4,13 @@ import {
   AppBar,
   Toolbar,
   Button,
-  Typography,
   withStyles,
+  Theme,
 } from '@material-ui/core';
 import React from 'react';
-import UnstyledLink from '../UnstyledLink';
+import logo from '../../../assets/logoMonochromeWhite.svg';
 
-function styles() {
+function styles(theme: Theme) {
   return createStyles({
     root: {
       flexGrow: 1,
@@ -21,6 +21,12 @@ function styles() {
       display: 'flex',
       flexDirection: 'row',
       justifyContent: 'start',
+    },
+    title: {
+      marginRight: theme.spacing(2),
+    },
+    logo: {
+      width: 150,
     },
   });
 }
@@ -33,12 +39,28 @@ const TopMenuBar = (props: TopMenuBarProps): JSX.Element => {
   const { classes, loggedIn } = props;
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar position="static" title="Best Community Service">
         <Toolbar>
           <div className={classes.primaryMenuItems}>
-            <Typography variant="h6">
-              <UnstyledLink to="/">BCS</UnstyledLink>
-            </Typography>
+            <Button href="/">
+              <img
+                src={logo}
+                className={classes.logo}
+                alt="Best Community Service Logo"
+              />
+            </Button>
+            <Button color="inherit" href="/services">
+              Services
+            </Button>
+            <Button color="inherit" href="/volunteer">
+              Volunteer
+            </Button>
+            <Button color="inherit" href="/calendar">
+              Calendar
+            </Button>
+            <Button color="inherit" href="/about">
+              About
+            </Button>
           </div>
           <Button color="inherit" variant="outlined">
             {loggedIn ? 'Logout' : 'Login'}

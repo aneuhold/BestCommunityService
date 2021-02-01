@@ -4,7 +4,8 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import TopMenuBar from './components/TopMenuBar';
 import About from './routes/About';
 import Home from './routes/Home';
-import Users from './routes/Users';
+import Services from './routes/Services';
+import Volunteer from './routes/Volunteer';
 
 const App = (): JSX.Element => {
   return (
@@ -15,8 +16,11 @@ const App = (): JSX.Element => {
           <Route path="/about">
             <About />
           </Route>
-          <Route path="/users">
-            <Users />
+          <Route path="/services">
+            <Services />
+          </Route>
+          <Route path="/volunteer">
+            <Volunteer />
           </Route>
           <Route path="/">
             <Home />
