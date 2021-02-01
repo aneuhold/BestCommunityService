@@ -16,7 +16,7 @@
     {
       /* Sets this override to .ts files and .tsx files */
       "files": [
-        "**/*.ts?(x)"
+        "src/**/*.ts?(x)"
       ],
       "parser": "@typescript-eslint/parser",
       "parserOptions": {
