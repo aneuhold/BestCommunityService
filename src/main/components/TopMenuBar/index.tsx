@@ -8,7 +8,7 @@ import {
   Theme,
 } from '@material-ui/core';
 import React from 'react';
-import logo from '../../../assets/logoMonochrome.svg';
+import logo from '../../../assets/logoImages/logoMonochrome.svg';
 
 function styles(theme: Theme) {
   return createStyles({

@@ -5,7 +5,7 @@ import {
   WithStyles,
 } from '@material-ui/core';
 import React from 'react';
-import logo from '../../assets/logoHero.svg';
+import logo from '../../assets/logoImages/logoHero.svg';
 
 function styles() {
   return createStyles({
