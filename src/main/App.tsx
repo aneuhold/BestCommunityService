@@ -19,21 +19,23 @@ const App = (): JSX.Element => {
   return (
     <Router>
       <MuiThemeProvider theme={theme}>
-        <TopMenuBar loggedIn={false} />
-        <Switch>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/services">
-            <Services />
-          </Route>
-          <Route path="/volunteer">
-            <Volunteer />
-          </Route>
-          <Route path="/">
-            <Home />
-          </Route>
-        </Switch>
+        <div className="App">
+          <TopMenuBar loggedIn={false} />
+          <Switch>
+            <Route path="/about">
+              <About />
+            </Route>
+            <Route path="/services">
+              <Services />
+            </Route>
+            <Route path="/volunteer">
+              <Volunteer />
+            </Route>
+            <Route path="/">
+              <Home />
+            </Route>
+          </Switch>
+        </div>
       </MuiThemeProvider>
     </Router>
   );
