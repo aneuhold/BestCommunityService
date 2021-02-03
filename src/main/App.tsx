@@ -7,6 +7,7 @@ import About from './routes/About';
 import Home from './routes/Home';
 import Services from './routes/Services';
 import Volunteer from './routes/Volunteer';
+import Login from './routes/Login';
 
 const App = (): JSX.Element => {
   const theme = createMuiTheme({
@@ -30,6 +31,9 @@ const App = (): JSX.Element => {
             </Route>
             <Route path="/volunteer">
               <Volunteer />
+            </Route>
+            <Route path="/login">
+              <Login />
             </Route>
             <Route path="/">
               <Home />

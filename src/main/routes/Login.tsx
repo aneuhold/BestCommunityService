@@ -16,23 +16,23 @@ function styles(theme: Theme) {
       justifyContent: 'space-around',
       backgroundColor: theme.palette.background.paper,
     },
-    pageTitle: {
+    callToAction: {
       display: 'inline-block',
     },
   });
 }
 
-export type ServicesProps = WithStyles<typeof styles>;
+export type LoginProps = WithStyles<typeof styles>;
 
-const Services = (props: ServicesProps): JSX.Element => {
+const Login = (props: LoginProps): JSX.Element => {
   const { classes } = props;
   return (
     <div className={classes.root}>
-      <Typography variant="h2" className={classes.pageTitle} component="h1">
-        Services
+      <Typography variant="h2" className={classes.callToAction} component="h1">
+        Placeholder for login page
       </Typography>
     </div>
   );
 };
 
-export default withStyles(styles, { withTheme: true })(Services);
+export default withStyles(styles, { withTheme: true })(Login);
