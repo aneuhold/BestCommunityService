@@ -6,8 +6,7 @@ import {
   WithStyles,
 } from '@material-ui/core';
 import React from 'react';
-import ServiceCard from '../components/ServiceCard';
-import services from '../data/services';
+import ServiceCards from '../components/ServiceCards';
 
 function styles(theme: Theme) {
   return createStyles({
@@ -38,11 +37,7 @@ const Services = (props: ServicesProps): JSX.Element => {
       <Typography variant="h2" className={classes.pageTitle} component="h1">
         Services
       </Typography>
-      <div className={classes.services}>
-        {services.map(service => (
-          <ServiceCard key={service.name} service={service} />
-        ))}
-      </div>
+      <ServiceCards />
     </div>
   );
 };

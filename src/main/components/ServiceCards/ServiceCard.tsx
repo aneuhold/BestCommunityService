@@ -10,12 +10,12 @@ import {
   WithStyles,
 } from '@material-ui/core';
 import React from 'react';
-import { Service } from '../data/services';
+import { Service } from '../../data/services';
 
 function styles(theme: Theme) {
   return createStyles({
     root: {
-      minWidth: 275,
+      width: 275,
       margin: theme.spacing(1),
     },
   });
@@ -30,8 +30,11 @@ const ServiceCard = (props: ServiceCardProps): JSX.Element => {
   return (
     <Card className={classes.root}>
       <CardContent>
-        <Typography variant="h5" component="h2">
+        <Typography variant="h5" component="h2" gutterBottom>
           {service.displayName}
+        </Typography>
+        <Typography variant="body2" component="p" color="textSecondary">
+          {service.description}
         </Typography>
       </CardContent>
       <CardActions>
