@@ -6,18 +6,24 @@ import {
   WithStyles,
 } from '@material-ui/core';
 import React from 'react';
+import ServiceCards from '../components/ServiceCards';
 
 function styles(theme: Theme) {
   return createStyles({
     root: {
       display: 'flex',
-      flexWrap: 'wrap',
+      flexDirection: 'column',
       textAlign: 'center',
-      justifyContent: 'space-around',
       backgroundColor: theme.palette.background.paper,
     },
+    services: {
+      display: 'flex',
+      flexWrap: 'wrap',
+      flexDirection: 'row',
+      justifyContent: 'center',
+    },
     pageTitle: {
-      display: 'inline-block',
+      display: 'block',
     },
   });
 }
@@ -31,6 +37,7 @@ const Services = (props: ServicesProps): JSX.Element => {
       <Typography variant="h2" className={classes.pageTitle} component="h1">
         Services
       </Typography>
+      <ServiceCards />
     </div>
   );
 };
