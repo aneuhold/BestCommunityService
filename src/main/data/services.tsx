@@ -1,6 +1,6 @@
 type ServiceType = 'inHouseService' | 'externalService';
 
-interface Service {
+export interface Service {
   type: ServiceType;
   name: string;
   displayName: string;
