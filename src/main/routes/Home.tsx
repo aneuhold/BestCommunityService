@@ -1,4 +1,4 @@
-import { Typography } from '@material-ui/core';
+import { Button, Typography } from '@material-ui/core';
 import React from 'react';
 import Hero from '../components/Hero';
 import PhotoGrid from '../components/PhotoGrid';
@@ -13,6 +13,9 @@ const Home = (): JSX.Element => {
         Services
       </Typography>
       <ServiceCards />
+      <Button variant="contained" color="secondary" href="/donations">
+        Make a Donation
+      </Button>
     </>
   );
 };

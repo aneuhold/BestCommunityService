@@ -9,6 +9,7 @@ import Services from './routes/Services';
 import Volunteer from './routes/Volunteer';
 import Login from './routes/Login';
 import Calendar from './routes/Calendar';
+import Donations from './routes/Donations';
 
 const App = (): JSX.Element => {
   const theme = createMuiTheme({
@@ -38,6 +39,9 @@ const App = (): JSX.Element => {
             </Route>
             <Route path="/calendar">
               <Calendar />
+            </Route>
+            <Route path="/donations">
+              <Donations />
             </Route>
             <Route path="/">
               <Home />
