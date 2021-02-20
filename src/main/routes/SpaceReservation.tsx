@@ -7,6 +7,7 @@ import {
 } from '@material-ui/core';
 import React from 'react';
 import CalendarFilter from '../components/CalendarFilter';
+import CalendarView from '../components/CalendarView';
 
 function styles(theme: Theme) {
   return createStyles({
@@ -34,6 +35,7 @@ const SpaceReservation = (props: SpaceReservationProps): JSX.Element => {
         Reserve a Space
       </Typography>
       <CalendarFilter />
+      <CalendarView />
     </div>
   );
 };
