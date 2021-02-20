@@ -11,7 +11,7 @@ import {
   WithStyles,
 } from '@material-ui/core';
 import React, { useState } from 'react';
-import EVENT_TYPE from '../data/events';
+import { EVENT_TYPE } from '../data/events';
 import SpaceSize from '../data/spaces';
 
 function styles(theme: Theme) {
@@ -73,7 +73,7 @@ const CalendarFilter = (props: CalendarFilterProps): JSX.Element => {
             onChange={handleEventTypeChange}
           >
             {Object.values(EVENT_TYPE).map(eventInfo => (
-              <MenuItem value={eventInfo.name}>
+              <MenuItem key={eventInfo.name} value={eventInfo.name}>
                 {eventInfo.displayName}
               </MenuItem>
             ))}

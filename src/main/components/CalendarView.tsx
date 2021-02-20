@@ -7,7 +7,7 @@ import {
   withStyles,
   WithStyles,
 } from '@material-ui/core';
-import { DateRange, StaticDateRangePicker } from '@material-ui/pickers';
+import { DateRange, StaticDateRangePicker } from '@material-ui/lab';
 import React, { useState } from 'react';
 
 function styles(theme: Theme) {

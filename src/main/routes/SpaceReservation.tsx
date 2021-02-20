@@ -8,6 +8,7 @@ import {
 import React from 'react';
 import CalendarFilter from '../components/CalendarFilter';
 import CalendarView from '../components/CalendarView';
+import CalendarListings from '../components/CalendarListings';
 
 function styles(theme: Theme) {
   return createStyles({
@@ -17,7 +18,7 @@ function styles(theme: Theme) {
       textAlign: 'center',
       flexDirection: 'column',
       justifyContent: 'space-around',
-      backgroundColor: theme.palette.background.paper,
+      background: theme.palette.background.default,
     },
     callToAction: {
       display: 'inline-block',
@@ -36,6 +37,7 @@ const SpaceReservation = (props: SpaceReservationProps): JSX.Element => {
       </Typography>
       <CalendarFilter />
       <CalendarView />
+      <CalendarListings />
     </div>
   );
 };
