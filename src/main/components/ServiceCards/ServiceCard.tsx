@@ -38,7 +38,9 @@ const ServiceCard = (props: ServiceCardProps): JSX.Element => {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Learn More</Button>
+        <Button size="small" href={service.learnMoreLink}>
+          Learn More
+        </Button>
       </CardActions>
     </Card>
   );
