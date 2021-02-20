@@ -28,6 +28,11 @@ export type DonationFormProps = WithStyles<typeof styles>;
 const DonationForm = (props: DonationFormProps): JSX.Element => {
   const { classes } = props;
   const [donationAmount, setDonationAmount] = useState('1');
+
+  function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
+    setDonationAmount(event.target.value);
+  }
+
   return (
     <div className={classes.root}>
       <TextField
@@ -36,9 +41,7 @@ const DonationForm = (props: DonationFormProps): JSX.Element => {
         }}
         label="Amount"
         value={donationAmount}
-        onChange={event => {
-          setDonationAmount(event.target.value);
-        }}
+        onChange={handleChange}
         className={classes.item}
       />
       <Button variant="outlined" color="primary" className={classes.item}>

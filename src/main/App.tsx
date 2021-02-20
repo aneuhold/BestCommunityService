@@ -2,6 +2,8 @@ import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { createMuiTheme, MuiThemeProvider } from '@material-ui/core';
+import { LocalizationProvider } from '@material-ui/pickers';
+import DateFnsUtils from '@material-ui/pickers/adapter/date-fns';
 import TopMenuBar from './components/TopMenuBar';
 import About from './routes/About';
 import Home from './routes/Home';
@@ -21,34 +23,36 @@ const App = (): JSX.Element => {
   });
   return (
     <Router>
-      <MuiThemeProvider theme={theme}>
-        <div className="App">
-          <TopMenuBar loggedIn={false} />
-          <Switch>
-            <Route path="/about">
-              <About />
-            </Route>
-            <Route path="/services">
-              <Services />
-            </Route>
-            <Route path="/volunteer">
-              <Volunteer />
-            </Route>
-            <Route path="/login">
-              <Login />
-            </Route>
-            <Route path="/calendar">
-              <Calendar />
-            </Route>
-            <Route path="/donations">
-              <Donations />
-            </Route>
-            <Route path="/">
-              <Home />
-            </Route>
-          </Switch>
-        </div>
-      </MuiThemeProvider>
+      <LocalizationProvider dateAdapter={DateFnsUtils}>
+        <MuiThemeProvider theme={theme}>
+          <div className="App">
+            <TopMenuBar loggedIn={false} />
+            <Switch>
+              <Route path="/about">
+                <About />
+              </Route>
+              <Route path="/services">
+                <Services />
+              </Route>
+              <Route path="/volunteer">
+                <Volunteer />
+              </Route>
+              <Route path="/login">
+                <Login />
+              </Route>
+              <Route path="/calendar">
+                <Calendar />
+              </Route>
+              <Route path="/donations">
+                <Donations />
+              </Route>
+              <Route path="/">
+                <Home />
+              </Route>
+            </Switch>
+          </div>
+        </MuiThemeProvider>
+      </LocalizationProvider>
     </Router>
   );
 };

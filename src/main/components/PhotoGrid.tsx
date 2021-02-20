@@ -1,7 +1,7 @@
 import {
   createStyles,
-  GridList,
-  GridListTile,
+  ImageList,
+  ImageListItem,
   Theme,
   withStyles,
   WithStyles,
@@ -19,9 +19,10 @@ function styles(theme: Theme) {
       backgroundColor: theme.palette.background.paper,
     },
     gridList: {
+      display: 'flex',
+      flexDirection: 'row',
       flexWrap: 'nowrap',
-      // Promote the list into his own layer on Chrome. This cost memory but helps keeping high FPS.
-      transform: 'translateZ(0)',
+      maxHeight: '70vh',
     },
   });
 }
@@ -32,13 +33,13 @@ const PhotoGrid = (props: PhotoGridProps): JSX.Element => {
   const { classes } = props;
   return (
     <div className={classes.root}>
-      <GridList className={classes.gridList} cols={2.5}>
+      <ImageList className={classes.gridList} cols={2.5}>
         {tileData.map(tile => (
-          <GridListTile key={tile.title}>
+          <ImageListItem key={tile.title}>
             <img src={tile.img} alt={tile.title} />
-          </GridListTile>
+          </ImageListItem>
         ))}
-      </GridList>
+      </ImageList>
     </div>
   );
 };
