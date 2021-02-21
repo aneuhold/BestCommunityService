@@ -23,7 +23,7 @@ const services: Services = [
     displayName: 'Home Care',
     type: 'externalService',
     description: 'In-home care for elderly, and handicapped.',
-    learnMoreLink: '/external-service-request',
+    learnMoreLink: '/external-services',
   },
   {
     name: 'spaceRentals',
