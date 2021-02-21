@@ -1,38 +1,70 @@
 import {
+  Card,
   createStyles,
   Theme,
   Typography,
-  withStyles,
-  WithStyles,
+  TextField,
+  makeStyles,
+  Button,
 } from '@material-ui/core';
 import React from 'react';
 
-function styles(theme: Theme) {
-  return createStyles({
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
     root: {
-      display: 'flex',
-      flexWrap: 'wrap',
       textAlign: 'center',
-      justifyContent: 'space-around',
-      backgroundColor: theme.palette.background.paper,
+      '& .MuiTextField-root': {
+        margin: theme.spacing(1),
+        width: '25ch',
+      },
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'stretch',
+      backgroundColor: theme.palette.background.default,
     },
-    callToAction: {
-      display: 'inline-block',
+    signUpForm: {
+      margin: theme.spacing(2),
+      display: 'flex',
+      flexDirection: 'column',
+      flexWrap: 'nowrap',
+      textAlign: 'center',
+      justifyContent: 'center',
+      alignItems: 'center',
+      padding: theme.spacing(2),
     },
-  });
-}
+    flexRow: {
+      display: 'flex',
+      flexDirection: 'row',
+      flexWrap: 'wrap',
+      justifyContent: 'center',
+    },
+  })
+);
 
-export type VolunteerProps = WithStyles<typeof styles>;
-
-const Volunteer = (props: VolunteerProps): JSX.Element => {
-  const { classes } = props;
+export default function Volunteer(): JSX.Element {
+  const classes = useStyles();
   return (
     <div className={classes.root}>
-      <Typography variant="h2" className={classes.callToAction} component="h1">
-        Sign up to be a volunteer!
+      <Typography variant="h2" component="h1">
+        Volunteer Sign-Up
       </Typography>
+      <Typography variant="body1" component="p">
+        Sign up below to become a volunteer!
+      </Typography>
+      <Card className={classes.signUpForm}>
+        <div className={classes.flexRow}>
+          <TextField label="First Name" required variant="filled" />
+          <TextField label="Last Name" required variant="filled" />
+        </div>
+        <TextField label="Phone Number" required variant="filled" />
+        <div className={classes.flexRow}>
+          <TextField label="Address line 1" required variant="filled" />
+          <TextField label="Address line 2" variant="filled" />
+          <TextField label="City" required variant="filled" />
+          <TextField label="Zip / Postal Code" required variant="filled" />
+        </div>
+        <Button variant="contained">Submit</Button>
+      </Card>
     </div>
   );
-};
-
-export default withStyles(styles, { withTheme: true })(Volunteer);
+}
