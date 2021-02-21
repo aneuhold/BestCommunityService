@@ -8,6 +8,7 @@ import {
   WithStyles,
 } from '@material-ui/core';
 import React, { useState } from 'react';
+import NotImplementedDialog from './NotImplementedDialog';
 
 function styles(theme: Theme) {
   return createStyles({
@@ -28,6 +29,7 @@ export type DonationFormProps = WithStyles<typeof styles>;
 const DonationForm = (props: DonationFormProps): JSX.Element => {
   const { classes } = props;
   const [donationAmount, setDonationAmount] = useState('1');
+  const [implementedDialogOpen, setImplementedDialogOpen] = useState(false);
 
   function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
     setDonationAmount(event.target.value);
@@ -44,9 +46,20 @@ const DonationForm = (props: DonationFormProps): JSX.Element => {
         onChange={handleChange}
         className={classes.item}
       />
-      <Button variant="outlined" color="primary" className={classes.item}>
+      <Button
+        variant="outlined"
+        color="primary"
+        className={classes.item}
+        onClick={() => {
+          setImplementedDialogOpen(true);
+        }}
+      >
         Make Donation
       </Button>
+      <NotImplementedDialog
+        open={implementedDialogOpen}
+        setOpen={setImplementedDialogOpen}
+      />
     </div>
   );
 };
