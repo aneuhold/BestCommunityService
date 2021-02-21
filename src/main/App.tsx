@@ -16,6 +16,7 @@ import Donations from './routes/Donations';
 import SpaceReservation from './routes/SpaceReservation';
 import CateringSignUp from './routes/CateringSignUp';
 import ShuttleRequest from './routes/ShuttleRequest';
+import EquipmentReservation from './routes/EquipmentReservation';
 
 const App = (): JSX.Element => {
   const theme = createMuiTheme({
@@ -59,6 +60,9 @@ const App = (): JSX.Element => {
                 </Route>
                 <Route path="/shuttle-request">
                   <ShuttleRequest />
+                </Route>
+                <Route path="/equipment-reservation">
+                  <EquipmentReservation />
                 </Route>
                 <Route path="/">
                   <Home />
