@@ -18,6 +18,7 @@ import CateringSignUp from './routes/CateringSignUp';
 import ShuttleRequest from './routes/ShuttleRequest';
 import EquipmentReservation from './routes/EquipmentReservation';
 import ExternalServices from './routes/ExternalServices';
+import ClassSignUp from './routes/ClassSignUp';
 
 const App = (): JSX.Element => {
   const theme = createMuiTheme({
@@ -67,6 +68,9 @@ const App = (): JSX.Element => {
                 </Route>
                 <Route path="/external-services">
                   <ExternalServices />
+                </Route>
+                <Route path="/class-sign-up">
+                  <ClassSignUp />
                 </Route>
                 <Route path="/">
                   <Home />
