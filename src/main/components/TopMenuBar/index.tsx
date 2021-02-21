@@ -87,7 +87,7 @@ const TopMenuBar = (props: TopMenuBarProps): JSX.Element => {
               );
             })}
           </div>
-          <Button color="inherit" variant="outlined">
+          <Button color="inherit" variant="outlined" href="/login">
             {loggedIn ? 'Logout' : 'Login'}
           </Button>
         </Toolbar>
