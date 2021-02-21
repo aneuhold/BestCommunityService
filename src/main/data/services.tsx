@@ -39,7 +39,7 @@ const services: Services = [
     type: 'inHouseService',
     description:
       'Rent or reserve equipment for events at the building, or at your own location.',
-    learnMoreLink: 'equipment-reservation',
+    learnMoreLink: '/equipment-reservation',
   },
   {
     name: 'classes',
@@ -47,7 +47,15 @@ const services: Services = [
     type: 'inHouseService',
     description:
       'Take classes on various topics such as Spanish, Arts & Crafts, and Painting put on by our very own Volunteers!',
-    learnMoreLink: 'class-sign-up',
+    learnMoreLink: '/class-sign-up',
+  },
+  {
+    name: 'shuttleService',
+    displayName: 'Shuttle Service',
+    type: 'externalService',
+    description:
+      'Request a shuttle any time to have our personal come and pick you up.',
+    learnMoreLink: '/shuttle-request',
   },
 ];
 
