@@ -10,8 +10,9 @@ import {
   Theme,
   Typography,
 } from '@material-ui/core';
-import React from 'react';
+import React, { useState } from 'react';
 import { equipment } from '../data/equipment';
+import NotImplementedDialog from './NotImplementedDialog';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -39,6 +40,8 @@ const useStyles = makeStyles((theme: Theme) =>
 export default function EquipmentFilter(): JSX.Element {
   const classes = useStyles();
 
+  const [implementedDialogOpen, setImplementedDialogOpen] = useState(false);
+
   return (
     <Card className={classes.root}>
       <CardHeader title="Filter" />
@@ -56,11 +59,22 @@ export default function EquipmentFilter(): JSX.Element {
               </Typography>
             </CardContent>
             <CardActions>
-              <Button size="small">Add to Filter</Button>
+              <Button
+                size="small"
+                onClick={() => {
+                  setImplementedDialogOpen(true);
+                }}
+              >
+                Add to Filter
+              </Button>
             </CardActions>
           </Card>
         ))}
       </div>
+      <NotImplementedDialog
+        open={implementedDialogOpen}
+        setOpen={setImplementedDialogOpen}
+      />
     </Card>
   );
 }
